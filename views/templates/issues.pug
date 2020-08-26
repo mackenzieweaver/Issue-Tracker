@@ -1,0 +1,53 @@
+html
+    head
+        title Dev Bug Tracker
+        meta(name="description" content="A cool thing made with HyperDev")
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+
+    body
+        nav(class="navbar navbar-expand-lg navbar-light bg-light")
+            a(class="navbar-brand" href="/") Dev Bug Tracker
+            div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                ul(class="navbar-nav mr-auto")
+                    li(class="nav-item active")
+                        a(class="nav-link" href="/") Home
+                    li(class="nav-item")
+                        a(class="nav-link" href="/new") New
+                    li(class="nav-item")
+                        a(class="nav-link" href="/update") Update
+                    li(class="nav-item")
+                        a(class="nav-link" href="/delete") Delete
+                    li(class="nav-item")
+                        a(class="nav-link" href="/open") Open
+                    li(class="nav-item")
+                        a(class="nav-link" href="/closed") Closed
+                
+                form(class="form-inline my-2 my-lg-0")
+                    input(class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search")
+                    button(class="btn btn-outline-secondary my-2 my-sm-0" type="submit") search
+        div(class="container" style="margin-top: 5%")
+            h1(style="text-align: center;") Issues
+            - for(var i = 0; i < issues.length; i++)
+                div(class="col" style="border: 1px solid black")
+                    ul(class="list-unstyled")
+                        li ID: #{issues[i]._id}
+                        li Title: #{issues[i].issue_title}
+                        li Description: #{issues[i].issue_text}
+                        li Created On: #{issues[i].created_on}
+                        li Updated On: #{issues[i].updated_on}
+                        li Created By: #{issues[i].created_by}
+                        li Assigned To: #{issues[i].assigned_to}
+                        li Open: #{issues[i].open}
+                        li Status: #{issues[i].status_text}                    
+                br
+
+        <!-- bootstrap -->
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        <!-- end bootstrap -->
